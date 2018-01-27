@@ -18,27 +18,45 @@ Let's look at some of the key features of Node.js
 
 1. Asynchronous event driven IO helps concurrent request handling – This is probably the biggest selling points of Node.js. This feature basically means that if a request is received by Node for some Input/Output operation, it will execute the operation in the background and continue with processing other requests.
 
-This is quite different from other programming languages. A simple example of this is given in the code below
+    This is quite different from other programming languages. A simple example of this is given in the code below
 
-```markdown
-var fs = require('fs'); 
-fs.readFile("Sample.txt",function(error,data){
-  console.log("Reading Data completed");
-});
-```
-* The above code snippet looks at reading a file called Sample.txt. In other programming languages, the next line of processing would only happen once the entire file is read.
-* But in the case of Node.js the important fraction of code to notice is the declaration of the function ('function(error,data)'). This is known as a callback function.
-* So what happens here is that the file reading operation will start in the background. And other processing can happen simultaneously while the file is being read. Once the file read operation is completed, this anonymous function will be called and the text "Reading Data completed" will be written to the console log.
+    ```markdown
+    var fs = require('fs'); 
+    fs.readFile("Sample.txt",function(error,data){
+      console.log("Reading Data completed");
+    });
+    ```
+    * The above code snippet looks at reading a file called Sample.txt. In other programming languages, the next line of processing would only happen once the entire file is read.
+    * But in the case of Node.js the important fraction of code to notice is the declaration of the function ('function(error,data)'). This is known as a callback function.
+    * So what happens here is that the file reading operation will start in the background. And other processing can happen simultaneously while the file is being read. Once the file read operation is completed, this anonymous function will be called and the text "Reading Data completed" will be written to the console log.
 
 2. Node uses the V8 JavaScript Runtime engine, the one which is used by Google Chrome. Node has a wrapper over the JavaScript engine which makes the runtime engine much faster and hence processing of requests within Node also become faster.
 3. Handling of concurrent requests – Another key functionality of Node is the ability to handle concurrent connections with a very minimal overhead on a single process.
 4. The Node.js library used JavaScript – This is another important aspect of development in Node.js. A major part of the development community are already well versed in javascript, and hence, development in Node.js becomes easier for a developer who knows javascript.
 5. There are an Active and vibrant community for the Node.js framework. Because of the active community, there are always keys updates made available to the framework. This helps to keep the framework always up-to-date with the latest trends in web development.
 
-### Jekyll Themes
+## Who uses Node.js
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rkarthick90/Nodejs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Node.js is used by a variety of large companies.
 
-### Support or Contact
+## When to Use Node.js
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Node.js is best for usage in streaming or event-based real-time applications like
+
+1. Chat applications
+2. Game servers – Fast and high-performance servers that need to processes thousands of requests at a time, then this is an ideal framework.
+3. Good for collaborative environment – This is good for environments which manage document. In document management environment you will have multiple people who post their documents and do constant changes by checking out and checking in documents. So Node.js is good for these environments because the event loop in Node.js can be triggered whenever documents are changed in a document managed environment.
+4. Advertisement servers – Again here you could have thousands of request to pull advertisements from the central server and Node.js can be an ideal framework to handle this.
+5. Streaming servers – Another ideal scenario to use Node is for multimedia streaming servers wherein clients have request's to pull different multimedia contents from this server.
+
+Node.js is good when you need high levels of concurrency but less amount of dedicated CPU time.
+
+Best of all, since Node.js is built on javascript, it's best suited when you build client-side applications which are based on the same javascript framework
+
+## When to not use Node.js
+
+Node.js can be used for a lot of applications with various purpose, the only scenario where it should not be used is if there are long processing times which is required by the application.
+
+Node is structured to be single threaded. If any application is required to carry out some long running calculations in the background. So if the server is doing some calculation, it won't be able to process any other requests. As discussed above, Node.js is best when processing needs less dedicated CPU time.
+
+
